@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -5,6 +6,24 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.modal-header, .modal-footer{
+  background-color: lightgrey;
+}
+
+.custom-modal{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.custom-modal button{
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

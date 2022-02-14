@@ -4,6 +4,12 @@ import './index.module.css';
 import App from './app';
 import reportWebVitals from './reportWebVitals';
 
+import { firebaseApp } from './service/fBase';
+import AuthService from './service/auth_service';
+
+
+const authService = new AuthService(firebaseApp);
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

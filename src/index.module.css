@@ -1,5 +1,7 @@
-@value colors: './common/colors.css'; 
-@value makerBlack from colors;
+@value makerBlack from './common/colors.module.css';
+@value makerLightGrey from './common/colors.module.css';
+
+
 
 body {
   margin: 0;
@@ -8,10 +10,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: makerBlack;
+  background-color: makerLightGrey;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
