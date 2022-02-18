@@ -2,3 +2,73 @@
 
 @value modal-width : 100%;
 
+
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  .modal-header, .modal-footer{
+    background-color: lightgrey;
+  }
+  
+  .custom-modal{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .custom-modal button{
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  
+  .onLogout{
+    position: absolute;
+    width: 6% !important;
+    font-size: 9px;
+    right: 1em;
+    top: 1em;
+    padding: 0.8em;
+    border-radius: 15%;
+    background-color: rgba(182, 180, 180, 0.932);
+    cursor: pointer;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

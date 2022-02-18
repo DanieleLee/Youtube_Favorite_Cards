@@ -12,7 +12,9 @@ const authService = new AuthService(firebaseApp);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App 
+      authservice = {authService} 
+    />
   </React.StrictMode>,
   document.getElementById('root')
 );
