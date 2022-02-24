@@ -6,15 +6,18 @@ import reportWebVitals from './reportWebVitals';
 
 import { firebaseApp } from './service/fBase';
 import AuthService from './service/auth_service';
+import { BrowserRouter } from 'react-router-dom';
 
 
 const authService = new AuthService(firebaseApp);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App 
-      authservice = {authService} 
-    />
+      <BrowserRouter>
+        <App 
+          authservice = {authService} 
+        />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

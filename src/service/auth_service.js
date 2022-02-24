@@ -31,6 +31,12 @@ class AuthService{
         console.log('logOut...');
         signOut(this.firebaseAuth);
     }
+
+    onAuthChanged(onUserChanged){
+        this.firebaseAuth.onAuthStateChanged(user =>{
+            onUserChanged(user);
+        })
+    }
 }
 
 export default AuthService;
