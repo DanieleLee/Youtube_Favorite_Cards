@@ -19,7 +19,7 @@ const LoginModal = (props) => (
                   
     // }
     // const onLogout = props.onLogout;
-    
+      
       <Modal
         {...props}
         size="lg"
@@ -32,7 +32,7 @@ const LoginModal = (props) => (
             className='custom-modal'
           >
             <div>
-              {true && <button className='onLogout' onClick={() => props.onclick}>Logout</button>}
+              {true && <button className='onLogout' onClick={(e) => props.onclick(e)}>Logout</button>}
               <img src='./favicon.ico'></img>
             </div>
             <div>
@@ -46,13 +46,13 @@ const LoginModal = (props) => (
           <h4>Login</h4>
           <Button
             className='Google'
-            onClick={() => props.onclick}
+            onClick={(e) => props.onclick(e)}
           >
             Google
           </Button>
           <Button
             className='Git'
-            onClick={() => props.onclick}
+            onClick={(e) => props.onclick(e)}
           >
             Git
           </Button>

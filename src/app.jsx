@@ -22,9 +22,10 @@ function App({authservice}) {
       authservice.logout();
       setUid(null);
       navigate('/');
+      
     }else{
-      if(uid)
-        return;
+      // if(uid)
+      //   return;
 
       authservice.login( event.target.innerText )
         .then((result) => {
@@ -49,7 +50,7 @@ function App({authservice}) {
       });
     }    
   }
-  ,[uid])
+  ,[uid]);
 
   return (
     <>
@@ -59,7 +60,7 @@ function App({authservice}) {
               <Route path='/' exact element={<LoginModal show = {true} authservice = {authservice} onclick = {onClick}/>}></Route>
             )}
             
-            <Route path='/maker/:id' element={<Maker onclick = {onClick} nav = {navigate} />}></Route>
+            <Route path='/maker/:id' element={<Maker onclick = {onClick} nav = {navigate} authservice = {authservice}/>}></Route>
           </Routes>
       </div>
     </>
