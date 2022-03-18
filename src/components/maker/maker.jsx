@@ -58,11 +58,17 @@ const Maker = (props) => {
 
     });
 
+    const addCard = (card) => {
+        const updated = [...cards, card];
+        setCards(updated);
+        console.log(cards);
+    }
+
     return(
         <section className={styles.maker}>
             <Header onlogout={props.onclick}></Header>
             <div className={styles.container}>
-                <Editor cards={cards}/>
+                <Editor cards={cards} addCard={addCard}/>
                 <Preview cards={cards}/>
 
             </div>
