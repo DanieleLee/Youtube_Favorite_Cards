@@ -11,8 +11,8 @@ const Maker = (props) => {
     //     service.logout();
     //     navigate(-1);
     // }
-    const [cards, setCards] = useState([
-        {
+    const [cards, setCards] = useState({
+        '1': {
             id: '1',
             name: 'Daniele',
             company: 'MicroSoft',
@@ -22,9 +22,8 @@ const Maker = (props) => {
             message: 'go together',
             fileName: 'untitle1',
             fileURL: null
-
         },
-        {
+        '2': {
             id: '2',
             name: 'Daniele2',
             company: 'Google',
@@ -34,9 +33,9 @@ const Maker = (props) => {
             message: 'go together',
             fileName: 'untitle1',
             fileURL: ''
-
+    
         },
-        {
+        '3': {
             id: '3',
             name: 'Daniele3',
             company: 'Netmable',
@@ -45,10 +44,10 @@ const Maker = (props) => {
             email: 'daniele3@gmail.com',
             message: 'go together',
             fileName: 'untitle1',
-            fileURL: ''
-
+            fileURL: ''  
         }
-    ]);
+    });
+  
     useEffect(() => {
         props.authservice.onAuthChanged(user => {
             if(!user){
@@ -61,14 +60,32 @@ const Maker = (props) => {
     const addCard = (card) => {
         const updated = [...cards, card];
         setCards(updated);
-        console.log(cards);
+        // console.log(cards);
     }
 
+    const createOrUpdateCard = (card) => {
+        // const updated = {...cards};
+        // updated[card.id] = card;
+        // setCards(updated);
+        setCards(cards => {
+            const updated = {...cards};
+            updated[card.id] = card;
+            return updated;
+        });
+    }
+
+    const deleteCard = (card) => {
+        setCards(cards => {
+            const updated = {...cards};
+            delete updated[card.id];
+            return updated;
+        });
+    }
     return(
         <section className={styles.maker}>
             <Header onlogout={props.onclick}></Header>
             <div className={styles.container}>
-                <Editor cards={cards} addCard={addCard}/>
+                <Editor FileInput = {props.FileInput} cards={cards} addCard={createOrUpdateCard} updateCard={createOrUpdateCard} deleteCard={deleteCard}/>
                 <Preview cards={cards}/>
 
             </div>

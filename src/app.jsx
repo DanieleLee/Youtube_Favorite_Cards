@@ -8,7 +8,7 @@ import LoginModal from './components/login/login';
 import Maker from './components/maker/maker';
 
 
-function App({authservice}) {
+function App({FileInput, authservice}) {
   const [uid, setUid] = React.useState(null);
   const navigate = useNavigate();
   const goToMaker = userId => {
@@ -60,7 +60,7 @@ function App({authservice}) {
               <Route path='/' exact element={<LoginModal show = {true} authservice = {authservice} onclick = {onClick}/>}></Route>
             )}
             
-            <Route path='/maker/:id' element={<Maker onclick = {onClick} nav = {navigate} authservice = {authservice}/>}></Route>
+            <Route path='/maker/:id' element={<Maker FileInput = {FileInput} onclick = {onClick} nav = {navigate} authservice = {authservice}/>}></Route>
           </Routes>
       </div>
     </>
