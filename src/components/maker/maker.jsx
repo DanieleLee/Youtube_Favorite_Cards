@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation} from 'react-router-dom';
 import Editor from '../editor/editor';
 import Header from '../header/header';
 import Preview from '../preview/preview';
@@ -7,50 +7,19 @@ import styles from './maker.module.css';
 
 const Maker = (props) => {
     const location = useLocation();
+    const historyState = location.state;
     // const onLogout = () => {
     //     service.logout();
     //     navigate(-1);
     // }
-    const [cards, setCards] = useState({
-        '1': {
-            id: '1',
-            name: 'Daniele',
-            company: 'MicroSoft',
-            theme: 'dark',
-            title: 'Software Engineer',
-            email: 'daniele@gmail.com',
-            message: 'go together',
-            fileName: 'untitle1',
-            fileURL: null
-        },
-        '2': {
-            id: '2',
-            name: 'Daniele2',
-            company: 'Google',
-            theme: 'colorful',
-            title: 'Software Engineer',
-            email: 'daniele2@gmail.com',
-            message: 'go together',
-            fileName: 'untitle1',
-            fileURL: ''
-    
-        },
-        '3': {
-            id: '3',
-            name: 'Daniele3',
-            company: 'Netmable',
-            theme: 'light',
-            title: 'Software Engineer',
-            email: 'daniele3@gmail.com',
-            message: 'go together',
-            fileName: 'untitle1',
-            fileURL: ''  
-        }
-    });
+    const [cards, setCards] = useState({});
+    const [userId, setUserId] = useState(historyState && historyState.userId);
   
     useEffect(() => {
         props.authservice.onAuthChanged(user => {
-            if(!user){
+            if(user){
+                setUserId(user.uid);
+            }else{
                 props.nav('/');
             }
         })
@@ -72,6 +41,7 @@ const Maker = (props) => {
             updated[card.id] = card;
             return updated;
         });
+        props.cardRepository.saveCard(userId, card);
     }
 
     const deleteCard = (card) => {

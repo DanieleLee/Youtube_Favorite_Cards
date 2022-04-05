@@ -8,25 +8,23 @@ import LoginModal from './components/login/login';
 import Maker from './components/maker/maker';
 
 
-function App({FileInput, authservice}) {
+function App({FileInput, authservice, cardRepository}) {
   const [uid, setUid] = React.useState(null);
   const navigate = useNavigate();
   const goToMaker = userId => {
-    // navigate(`/maker/${userId}`, {state:{ service : authservice }});
-    navigate(`/maker/${userId}`);
+    navigate('/maker', {state:{id: userId}});
+    // navigate(`/maker/${userId}`);
+
   }
 
   const onClick = (event) => {
     if(event.target.innerText == "Logout"){
-
       authservice.logout();
       setUid(null);
       navigate('/');
-      
     }else{
       // if(uid)
       //   return;
-
       authservice.login( event.target.innerText )
         .then((result) => {
           if(result != undefined){
@@ -60,7 +58,16 @@ function App({FileInput, authservice}) {
               <Route path='/' exact element={<LoginModal show = {true} authservice = {authservice} onclick = {onClick}/>}></Route>
             )}
             
-            <Route path='/maker/:id' element={<Maker FileInput = {FileInput} onclick = {onClick} nav = {navigate} authservice = {authservice}/>}></Route>
+            <Route path='/maker' 
+                  element={
+                    <Maker 
+                      FileInput = {FileInput} 
+                      onclick = {onClick} 
+                      nav = {navigate} 
+                      authservice = {authservice} 
+                      cardRepository = {cardRepository}/>}>
+
+            </Route>
           </Routes>
       </div>
     </>
