@@ -14,7 +14,16 @@ const Maker = (props) => {
     // }
     const [cards, setCards] = useState({});
     const [userId, setUserId] = useState(historyState && historyState.userId);
-  
+    
+    useEffect(() => {
+        if(!userId){
+            return;
+        }
+        const stopSync = props.cardRepository.syncCards(userId, cards => {
+            setCards(cards);
+        });
+        return () => stopSync();
+    }, [userId]);
     useEffect(() => {
         props.authservice.onAuthChanged(user => {
             if(user){
@@ -50,6 +59,7 @@ const Maker = (props) => {
             delete updated[card.id];
             return updated;
         });
+        props.cardRepository.removeCard(userId,card);
     }
     return(
         <section className={styles.maker}>
