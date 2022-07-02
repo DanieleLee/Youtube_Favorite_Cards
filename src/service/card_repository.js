@@ -1,4 +1,3 @@
-import {firebaseApp} from './fBase';
 import {getDatabase, ref, set, remove, onValue, off} from 'firebase/database';
 
 const dataBase = getDatabase();

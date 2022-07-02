@@ -41,7 +41,7 @@ function App({FileInput, authservice, cardRepository}) {
 
 
   useEffect(() => {
-    console.log("uid:" + uid);
+    // console.log("uid:" + uid);
     if(uid != null){
       authservice.onAuthChanged(user => {
         user && goToMaker(user.uid);
@@ -55,14 +55,14 @@ function App({FileInput, authservice, cardRepository}) {
       <div class={styles.app}>
           <Routes>
             {!uid && (
-              <Route path='/' exact element={<LoginModal show = {true} authservice = {authservice} onclick = {onClick}/>}></Route>
+              <Route path='/' exact element={<LoginModal show = {true} authservice = {authservice} onClick = {onClick}/>}></Route>
             )}
             
             <Route path='/maker' 
                   element={
                     <Maker 
                       FileInput = {FileInput} 
-                      onclick = {onClick} 
+                      onClick = {onClick} 
                       nav = {navigate} 
                       authservice = {authservice} 
                       cardRepository = {cardRepository}/>}>

@@ -1,5 +1,4 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, signOut } from 'firebase/auth'
-import { firebaseApp } from './fBase';
 
 class AuthService{
     constructor(){
@@ -21,7 +20,7 @@ class AuthService{
     }
 
     login(name){
-        console.log(name);
+        // console.log(name);
         const authProvider = this.getProvider(name);
         // console.log(authProvider);
         return signInWithPopup(this.firebaseAuth,authProvider);

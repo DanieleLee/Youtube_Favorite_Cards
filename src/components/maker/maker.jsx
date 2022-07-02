@@ -63,7 +63,7 @@ const Maker = (props) => {
     }
     return(
         <section className={styles.maker}>
-            <Header onlogout={props.onclick}></Header>
+            <Header onlogout={props.onClick}></Header>
             <div className={styles.container}>
                 <Editor FileInput = {props.FileInput} cards={cards} addCard={createOrUpdateCard} updateCard={createOrUpdateCard} deleteCard={deleteCard}/>
                 <Preview cards={cards}/>

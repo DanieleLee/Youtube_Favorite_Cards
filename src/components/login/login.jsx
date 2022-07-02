@@ -32,7 +32,7 @@ const LoginModal = (props) => (
             className='custom-modal'
           >
             <div>
-              {true && <button className='onLogout' onClick={(e) => props.onclick(e)}>Logout</button>}
+              {true && <button className='onLogout' onClick={(e) => props.onClick(e)}>Logout</button>}
               <img src='./favicon.ico'></img>
             </div>
             <div>
@@ -46,13 +46,13 @@ const LoginModal = (props) => (
           <h4>Login</h4>
           <Button
             className='Google'
-            onClick={(e) => props.onclick(e)}
+            onClick={(e) => props.onClick(e)}
           >
             Google
           </Button>
           <Button
             className='Git'
-            onClick={(e) => props.onclick(e)}
+            onClick={(e) => props.onClick(e)}
           >
             Git
           </Button>
