@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, signOut } from 'firebase/auth'
+import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, signOut, signInWithRedirect } from 'firebase/auth'
 
 class AuthService{
     constructor(){
@@ -22,8 +22,7 @@ class AuthService{
     login(name){
         // console.log(name);
         const authProvider = this.getProvider(name);
-        // console.log(authProvider);
-        return signInWithPopup(this.firebaseAuth,authProvider);
+        return signInWithPopup(this.firebaseAuth, authProvider);
     }
 
     logout(){

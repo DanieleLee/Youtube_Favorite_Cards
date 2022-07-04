@@ -13,6 +13,7 @@ function App({FileInput, authservice, cardRepository}) {
   const navigate = useNavigate();
   const goToMaker = userId => {
     navigate('/maker', {state:{id: userId}});
+  
     // navigate(`/maker/${userId}`);
 
   }
@@ -22,9 +23,8 @@ function App({FileInput, authservice, cardRepository}) {
       authservice.logout();
       setUid(null);
       navigate('/');
-    }else{
-      // if(uid)
-      //   return;
+    }else if(event.target.innerText == "Google" || event.target.innerText == "Git"){
+      
       authservice.login( event.target.innerText )
         .then((result) => {
           if(result != undefined){
