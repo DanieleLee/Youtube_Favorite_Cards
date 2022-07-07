@@ -23,7 +23,7 @@ function App({FileInput, authservice, cardRepository}) {
       authservice.logout();
       setUid(null);
       navigate('/');
-    }else if(event.target.innerText == "Google" || event.target.innerText == "Git"){
+    }else{
       
       authservice.login( event.target.innerText )
         .then((result) => {
@@ -52,7 +52,7 @@ function App({FileInput, authservice, cardRepository}) {
 
   return (
     <>
-      <div class={styles.app}>
+      <div className={styles.app}>
           <Routes>
             {!uid && (
               <Route path='/' exact element={<LoginModal show = {true} authservice = {authservice} onClick = {onClick}/>}></Route>

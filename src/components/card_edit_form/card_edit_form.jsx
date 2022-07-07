@@ -13,7 +13,7 @@ const {
     message,
     fileName,
     fileURL
-    } = card;
+    } = card.card;
 
     const onFileChange = (file) => {
         if(file == null){

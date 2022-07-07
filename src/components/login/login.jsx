@@ -42,6 +42,7 @@ const LoginModal = (props) => (
         </Modal.Header>
         <Modal.Body
           className='custom-modal'
+          onClick={(e) => e.stopPropagation()}
         >
           <h4>Login</h4>
           <Button
@@ -57,7 +58,9 @@ const LoginModal = (props) => (
             Git
           </Button>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer
+          onClick={(e) => e.stopPropagation()}
+        >
           <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
