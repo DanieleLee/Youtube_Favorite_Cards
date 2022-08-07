@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 
-const LoginModal = (props) => (
+const LoginModal = ({clickEvent, onHide}) => (
     // const onClick = (event) => {
-    //   var auth_service = props.authService;
+    //   var auth_service = authService;
     //   auth_service.login(
     //                 event.currentTarget.textContent
     //               )
@@ -18,10 +18,11 @@ const LoginModal = (props) => (
     //               });
                   
     // }
-    // const onLogout = props.onLogout;
-      
+    // const onLogout = onLogout;
+    
       <Modal
-        {...props}
+        // {...props}
+        show="true"
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -32,11 +33,11 @@ const LoginModal = (props) => (
             className='custom-modal'
           >
             <div>
-              {true && <button className='onLogout' onClick={(e) => props.onClick(e)}>Logout</button>}
-              <img src='./favicon.ico'></img>
+              {true && <button className='onLogout' onClick={(e) => clickEvent(e)}>LOGOUT</button>}
+              <img src='./images/favor.png'></img>
             </div>
             <div>
-              <h3>Business Card Maker</h3>
+              <h3>Make FavorVideo Cards </h3>
             </div>
           </Modal.Title>
         </Modal.Header>
@@ -44,24 +45,30 @@ const LoginModal = (props) => (
           className='custom-modal'
           onClick={(e) => e.stopPropagation()}
         >
-          <h4>Login</h4>
+          <h4>LOGIN</h4>
           <Button
             className='Google'
-            onClick={(e) => props.onClick(e)}
+            onClick={(e) => clickEvent(e)}
           >
             Google
           </Button>
           <Button
             className='Git'
-            onClick={(e) => props.onClick(e)}
+            onClick={(e) => clickEvent(e)}
           >
             Git
+          </Button>
+          <Button
+            className='Email'
+            onClick={(e) => clickEvent(e)}
+          >
+            Email
           </Button>
         </Modal.Body>
         <Modal.Footer
           onClick={(e) => e.stopPropagation()}
         >
-          <Button onClick={props.onHide}>Close</Button>
+          <Button className='custom-modal-close' onClick={onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
     );

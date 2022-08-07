@@ -18,7 +18,7 @@ function App({FileInput, authservice, cardRepository}) {
 
   }
 
-  const onClick = (event) => {
+  const clickEvent = (event) => {
     if(event.target.innerText == "Logout"){
       authservice.logout();
       setUid(null);
@@ -41,7 +41,6 @@ function App({FileInput, authservice, cardRepository}) {
 
 
   useEffect(() => {
-    // console.log("uid:" + uid);
     if(uid != null){
       authservice.onAuthChanged(user => {
         user && goToMaker(user.uid);
@@ -55,19 +54,20 @@ function App({FileInput, authservice, cardRepository}) {
       <div className={styles.app}>
           <Routes>
             {!uid && (
-              <Route path='/' exact element={<LoginModal show = {true} authservice = {authservice} onClick = {onClick}/>}></Route>
+              <Route path='/' exact element={<LoginModal show = {true} authservice = {authservice} clickEvent = {clickEvent} />}></Route>
             )}
             
-            <Route path='/maker' 
+            {/* <Route path='/maker' 
                   element={
                     <Maker 
                       FileInput = {FileInput} 
-                      onClick = {onClick} 
+                      clickEvent = {clickEvent} 
                       nav = {navigate} 
                       authservice = {authservice} 
                       cardRepository = {cardRepository}/>}>
 
-            </Route>
+            </Route> */}
+            
           </Routes>
       </div>
     </>

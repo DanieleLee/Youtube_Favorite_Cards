@@ -1,6 +1,7 @@
 @value modal-txtAlign : center;
-
 @value modal-width : 100%;
+@value makerWhite from './common/colors.module.css';
+@value makerCharcoal from './common/colors.module.css';
 
 
 .App {
@@ -13,7 +14,7 @@
   }
   
   .modal-header, .modal-footer{
-    background-color: lightgrey;
+    background-color: makerWhite;
   }
   
   .custom-modal{
@@ -28,20 +29,41 @@
     width: 100%;
     margin-top: 6px;
     margin-bottom: 6px;
+    background-color: #231f20;
+    border-color: #231f20;
+    background-image: -webkit-linear-gradient(bottom, rgb(109, 2, 2) 6%, rgb(201, 0, 0) 61%);
   }
-  
+  .custom-modal button:hover{
+    color: #231f20;
+  }
+
+
   .onLogout{
     position: absolute;
-    width: 6% !important;
-    font-size: 9px;
+    width: 7% !important;
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
     right: 1em;
     top: 1em;
     padding: 0.8em;
-    border-radius: 15%;
-    background-color: rgba(182, 180, 180, 0.932);
+    border-radius: 10%;
+    background-color: rgb(241, 0, 0) !important;
+    box-shadow: 2px 2px 2px 1px gray;
     cursor: pointer;
   }
+
+  .custom-modal-close{
+    background-color: rgb(241, 0, 0);
+    background-image: -webkit-linear-gradient(bottom, rgb(109, 2, 2) 6%, rgb(201, 0, 0) 61%);
+    box-shadow: 2px 2px 2px 1px gray;
+  }
   
+  .custom-modal-close:hover{
+    color: #231f20;
+  }
+
+
   @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
