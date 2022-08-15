@@ -2,11 +2,11 @@ import React from 'react';
 import styles from './card.module.css';
 
 const DEFAULT_IMAGE = '/images/default_logo.png';
-const Card = ({card}) => {
+const Card = ({card, clickEvent}) => {
     const {id,name,company,theme,title,email,message,fileName,fileURL} = card.card;
     const url = fileURL || DEFAULT_IMAGE;
     return (
-        <li className={`${styles.card} ${getStyles(theme)}`}>
+        <li className={`${styles.card} ${getStyles(theme)}`} onClick={(e) => clickEvent(card)}>
             <img className={styles.avatar}src={url} alt='profile'></img>
             <div className={styles.info}>
                 <h1 className={styles.name}>{name}</h1>

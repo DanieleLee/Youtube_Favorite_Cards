@@ -5,12 +5,10 @@ const Header = (props) => (
   
     <header className={styles.header}>
       
-      <button className={styles.logout} onClick={ props.onlogout}>
-        Logout
-      </button>
 
-      <img className={styles.logo} src="/images/logo.png" alt="logo" />
-      <h1 className={styles.title}>Business Card Maker</h1>
+      <button className='onLogout' onClick={(e) => props.onlogout(e)}>LOGOUT</button>
+      <img className={styles.logo} src="./images/favor.png" alt="logo" />
+      <h1 className={styles.title}>Youtube Favorite Cards</h1>
     </header>
 );
 

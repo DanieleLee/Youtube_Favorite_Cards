@@ -1,4 +1,4 @@
-@value makerGreen, makerBlack, makerWhite from '../../common/colors.module.css';
+@value makerGreen, makerBlack, makerWhite,makerCharcoal,makerLightPink from '../../common/colors.module.css';
 
 .header {
   width: 100%;
@@ -17,15 +17,18 @@
   color: makerWhite;
 }
 
-.logout {
+/* .onLogout{
   position: absolute;
-  right: 3em;
+  width: 7% !important;
+  font-size: 10px;
+  color: white;
+  font-weight: bold;
+  right: 1em;
   top: 1em;
   padding: 0.8em;
-  border-radius: 20%;
-  background-color: makerBlack;
-  color: makerWhite;
-  outline: 0;
-  border: 0;
+  border-radius: 7%;
+  background-color: makerLightPink;
+  box-shadow: 1px 1px 1px 1px gray;
   cursor: pointer;
-}
+} */
+

@@ -24,6 +24,7 @@ const Maker = (props) => {
         });
         return () => stopSync();
     }, [userId]);
+    
     useEffect(() => {
         props.authservice.onAuthChanged(user => {
             if(user){
@@ -63,10 +64,10 @@ const Maker = (props) => {
     }
     return(
         <section className={styles.maker}>
-            <Header onlogout={props.onClick}></Header>
+            <Header onlogout={props.clickEvent}></Header>
             <div className={styles.container}>
                 <Editor FileInput = {props.FileInput} cards={cards} addCard={createOrUpdateCard} updateCard={createOrUpdateCard} deleteCard={deleteCard}/>
-                <Preview cards={cards}/>
+                <Preview cards={cards} clickEvent={props.clickEvent}/>
 
             </div>
         </section>

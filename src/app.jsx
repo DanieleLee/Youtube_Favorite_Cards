@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { BrowserRouter, Link, Route, Routes, useNavigate } from 'react-router-dom';
 import styles from './app.module.css';
-import './common/login.css';
+import './common/colors.module.css';
+import './components/login/login.css';
 
 import LoginModal from './components/login/login';
 import Maker from './components/maker/maker';
@@ -19,12 +20,16 @@ function App({FileInput, authservice, cardRepository}) {
   }
 
   const clickEvent = (event) => {
-    if(event.target.innerText == "Logout"){
+    if(event.target == undefined){
+      console.log(event);
+      return;
+    }
+
+    if(event.target.innerText == "LOGOUT"){
       authservice.logout();
       setUid(null);
       navigate('/');
     }else{
-      
       authservice.login( event.target.innerText )
         .then((result) => {
           if(result != undefined){
@@ -57,7 +62,7 @@ function App({FileInput, authservice, cardRepository}) {
               <Route path='/' exact element={<LoginModal show = {true} authservice = {authservice} clickEvent = {clickEvent} />}></Route>
             )}
             
-            {/* <Route path='/maker' 
+            <Route path='/maker' 
                   element={
                     <Maker 
                       FileInput = {FileInput} 
@@ -66,7 +71,7 @@ function App({FileInput, authservice, cardRepository}) {
                       authservice = {authservice} 
                       cardRepository = {cardRepository}/>}>
 
-            </Route> */}
+            </Route>
             
           </Routes>
       </div>

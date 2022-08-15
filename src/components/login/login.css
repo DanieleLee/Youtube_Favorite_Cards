@@ -1,8 +1,6 @@
 @value modal-txtAlign : center;
 @value modal-width : 100%;
-@value makerWhite from './common/colors.module.css';
-@value makerCharcoal from './common/colors.module.css';
-
+@value makerWhite, makerLightPink, makerCharcoal from '../../common/colors.module.css';
 
 .App {
     text-align: center;
@@ -31,7 +29,7 @@
     margin-bottom: 6px;
     background-color: #231f20;
     border-color: #231f20;
-    background-image: -webkit-linear-gradient(bottom, rgb(109, 2, 2) 6%, rgb(201, 0, 0) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(253, 143, 143) 6%, rgb(253, 120, 134) 61%);
   }
   .custom-modal button:hover{
     color: #231f20;
@@ -47,15 +45,16 @@
     right: 1em;
     top: 1em;
     padding: 0.8em;
-    border-radius: 10%;
-    background-color: rgb(241, 0, 0) !important;
+    border-radius: 7%;
+    /* background-color: makerLightPink; */
+    background-image: -webkit-linear-gradient(bottom, rgb(253, 143, 143) 6%, rgb(253, 120, 134) 61%);
     box-shadow: 2px 2px 2px 1px gray;
     cursor: pointer;
   }
 
   .custom-modal-close{
     background-color: rgb(241, 0, 0);
-    background-image: -webkit-linear-gradient(bottom, rgb(109, 2, 2) 6%, rgb(201, 0, 0) 61%);
+    background-image: -webkit-linear-gradient(bottom, rgb(253, 143, 143) 6%, rgb(253, 120, 134) 61%);
     box-shadow: 2px 2px 2px 1px gray;
   }
   

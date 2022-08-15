@@ -14,3 +14,10 @@
     margin-bottom: 1em;
     color: makerGreen;
 }
+
+.header_section{
+    display: block;
+    background: url(https://ssl.pstatic.net/static.news/image/entertain/2016/04/bg_header.png) repeat-x 0 0;;
+    height: 2px;
+    margin-top: 0.5em;
+  }

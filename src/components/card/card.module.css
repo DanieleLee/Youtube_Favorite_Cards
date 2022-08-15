@@ -10,6 +10,7 @@
     background-color: brown;
     box-shadow: 6px 6px 8px 0px makerShadow;
     max-width: 30rem;
+    cursor: pointer;
 }
 
 .card.dark{

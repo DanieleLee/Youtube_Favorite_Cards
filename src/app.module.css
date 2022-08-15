@@ -1,5 +1,4 @@
-@value makerGray from './common/colors.module.css';
-@value makerYoutubeR from './common/colors.module.css';
+@value makerGray, makerYoutubeR from './common/colors.module.css';
 
 .app{
   width: 100%;
@@ -7,5 +6,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: makerYoutubeR;
+  background: linear-gradient(166deg, rgb(237 193 193) 0%,rgba(212, 149, 161, 1) 60%, rgba(162, 63, 63, 1) 100%, rgba(127, 188, 242, 1) 100%);
+  /* background-color: makerYoutubeR; */
 }
