@@ -10,6 +10,8 @@ import { BrowserRouter } from 'react-router-dom';
 import ImageUploader from './service/image_uploader';
 import ImageFileInput from './components/image_file_input/image_file_input';
 import CardRepository from './service/card_repository';
+import axios from 'axios';
+import Youtube from './service/youtube';
 
 
 const authService = new AuthService(firebaseApp);
@@ -19,13 +21,23 @@ const FileInput = (props) => (
   <ImageFileInput {...props} imageUploader={imageUploader} />
 );
 
+//*youtube Injection*
+const httpClient = axios.create({
+  baseURL: 'https://content-youtube.googleapis.com/youtube/v3',
+  params:{key: process.env.REACT_APP_YOUTUBE_API_KEY}
+});
+const youtube = new Youtube(httpClient);
+
+
+
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
         <App 
           authservice = {authService}
           FileInput = {FileInput}
-          cardRepository = {cardRepository} 
+          cardRepository = {cardRepository}
+          youtube = {youtube} 
         />
     </BrowserRouter>
   </React.StrictMode>,
