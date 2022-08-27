@@ -21,8 +21,8 @@ const List = memo (
               <div id='box2'>
                 <p>
                 {title_src1}
-                <br />
-                [{c_title_src1}]
+                {/* <br />
+                [{c_title_src1}] */}
                 </p>
                    
               </div>

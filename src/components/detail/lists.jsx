@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
 import List from './list';
+import styles from './lists.module.css';
 
 const Lists = ({youList, onVideoClick, display}) => {
         
@@ -11,7 +12,7 @@ const Lists = ({youList, onVideoClick, display}) => {
     // {
         return(
             // <tr>
-            <ul className={`displayU_${display}`}>
+            <ul className={styles.listsUl}>
                 {youList.map((item,idx) => (
                     <List 
                         key={item.id}
