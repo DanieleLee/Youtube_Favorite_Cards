@@ -12,7 +12,6 @@ import Detail from './components/detail/detail';
 
 function App({FileInput, authservice, cardRepository, youtube}) {
   const [uid, setUid] = React.useState(null);
-  const [youList, setYouList] = React.useState([]);
 
   const navigate = useNavigate();
   const goToMaker = (userId) => {
@@ -54,9 +53,9 @@ function App({FileInput, authservice, cardRepository, youtube}) {
 
   useEffect(() => {
     if(uid != null){
-      youtube
-        .mostPopular()
-        .then((videos) => setYouList(videos))
+      // youtube
+      //   .mostPopular()
+      //   .then((videos) => setYouList(videos))
 
       authservice.onAuthChanged(user => {
         user && goToMaker(user.uid);
@@ -91,7 +90,7 @@ function App({FileInput, authservice, cardRepository, youtube}) {
             <Route path='/detail' 
                   element={
                     <Detail
-                      youList={youList}/>
+                      youtube={youtube}/>
                   }>
             </Route>
             

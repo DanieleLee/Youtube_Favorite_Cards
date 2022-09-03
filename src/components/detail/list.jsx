@@ -1,4 +1,5 @@
 import React, { Component, memo, useCallback, useRef } from 'react';
+import styles from './list.module.css';
 
 const List = memo (
   ({item,onVideoClick, display}) => {
@@ -14,12 +15,12 @@ const List = memo (
     
       return(
           <>
-            <li className={`display_${display}`} onClick={onClick}>
-              <div id='box1'>
-                <img src={img_src1}></img>
-              </div>
-              <div id='box2'>
-                <p>
+            <li className={styles.cards__item} onClick={onClick}>
+              <figure className={styles.cards__item__pic_wrap}>
+                <img  src={img_src1} className={styles.cards__item__img}></img>
+              </figure>
+              <div className={styles.cards__item__info} id='box2'>
+                <p className={styles.cards__item__text}>
                 {title_src1}
                 {/* <br />
                 [{c_title_src1}] */}
