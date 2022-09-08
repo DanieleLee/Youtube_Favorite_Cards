@@ -4,6 +4,7 @@ import { BrowserRouter, Link, Route, Routes, useNavigate } from 'react-router-do
 import styles from './app.module.css';
 import './common/colors.module.css';
 import './components/login/login.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import LoginModal from './components/login/login';
 import Maker from './components/maker/maker';
@@ -50,7 +51,6 @@ function App({FileInput, authservice, cardRepository, youtube}) {
 
   };
 
-
   useEffect(() => {
     if(uid != null){
       // youtube
@@ -90,7 +90,9 @@ function App({FileInput, authservice, cardRepository, youtube}) {
             <Route path='/detail' 
                   element={
                     <Detail
-                      youtube={youtube}/>
+                      youtube={youtube}
+                      FontAwesomeIcon = {FontAwesomeIcon}
+                      />
                   }>
             </Route>
             

@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import List from './list';
 import styles from './lists.module.css';
 
-const Lists = ({youList, onVideoClick, display}) => {
+const Lists = ({youList, onVideoClick, display, FontAwesomeIcon}) => {
         
     // if(loading) return <p>Loading....</p>
 
@@ -21,6 +21,7 @@ const Lists = ({youList, onVideoClick, display}) => {
                                     item = {item}
                                     onVideoClick = {onVideoClick}
                                     display = {display}
+                                    FontAwesomeIcon = {FontAwesomeIcon}
                                 />
                             ))}
                         

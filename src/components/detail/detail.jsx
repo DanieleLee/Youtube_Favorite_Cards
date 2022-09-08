@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import Lists from './lists';
 import youtube_smp from '../../sample/youtube.json';
 
-const Detail = ({card, youtube}) => {
+const Detail = ({card, youtube, FontAwesomeIcon}) => {
     const [selList, setSelList] = React.useState(null);
     const [youList, setYouList] = React.useState([]);
 
@@ -27,6 +27,7 @@ const Detail = ({card, youtube}) => {
                 youList = {youList}
                 onVideoClick = {selectVideo}
                 display = 'flex'
+                FontAwesomeIcon = {FontAwesomeIcon}
             />
 
         </div>
