@@ -19,6 +19,7 @@ const Maker = (props) => {
         if(!userId){
             return;
         }
+        
         const stopSync = props.cardRepository.syncCards(userId, cards => {
             setCards(cards);
         });
@@ -32,7 +33,7 @@ const Maker = (props) => {
             }else{
                 props.nav('/');
             }
-        })
+        });
 
     });
 

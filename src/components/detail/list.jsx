@@ -4,7 +4,7 @@ import styles from './list.module.css';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 const List = memo (
-  ({item,onVideoClick, display, FontAwesomeIcon}) => {
+  ({item,onVideoClick, display, FontAwesomeIcon, addLikeList}) => {
     const onClick = useCallback(() => {
       onVideoClick(item);
     },[onVideoClick, item])
@@ -17,7 +17,15 @@ const List = memo (
       const img_src1 = item.snippet.thumbnails.default.url;
       const item_id = item.id;
       const title_src1 = item.snippet.title;
-      const tags = item.snippet.tags;  
+      const tags = item.snippet.tags;
+      
+      const onChange = (event) => {
+        // if(event.currentTarget == null){
+        //   return;
+        // }
+        event.preventDefault();
+        addLikeList(item_id);
+      }
 
       return(
           <>
@@ -54,7 +62,7 @@ const List = memo (
                 }
               </a>
               <div className={styles.like_card_control}>
-                <div className={"is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"} data-tooltip="좋아요">
+                <div className={"is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"} onClick={onChange}  data-tooltip="좋아요">
                   <FontAwesomeIcon icon={faHeart} />
                 </div>
               </div>
