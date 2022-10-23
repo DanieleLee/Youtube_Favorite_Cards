@@ -11,20 +11,20 @@
 ## 3 How to run this application
 형상관리에서 제외되어있는 환경변수의 key값만 있으면 언제든 프로그램 실행이 가능합니다.
 
-### 3.1. Getting a Youtube Data API key
+  ### 3.1. Getting a Youtube Data API key
 
-### 3.2. Providinng the API key to your application
+  ### 3.2. Providinng the API key to your application
 
-#### 3.2.1 input this application in the.env file
-REACT_APP_API_KEY = = 'AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-### 3.3. Installing dependencies
-To install the dependencies run
+  #### 3.2.1 input this application in the.env file
+    REACT_APP_API_KEY = = 'AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+  ### 3.3. Installing dependencies
+  To install the dependencies run
 
-npm install
-With yarn
+  npm install
+  With yarn
 
-yarn install
-### 3.4 Running the application
+  yarn install
+  ### 3.4 Running the application
 
 ## 4 Features
 This application includes the major features of Youtube such as
