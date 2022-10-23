@@ -1,5 +1,6 @@
 # Youtube_Favorite_Cards
-##1 About
+
+## 1 About
 This repository is the source code for the epic length Build Youtube in React tutorial series provided by productioncoder.com.
 
 Please help this repo with a ⭐️ if you find it useful! 😁
