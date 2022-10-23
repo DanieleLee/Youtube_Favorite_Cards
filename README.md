@@ -13,18 +13,18 @@
 
 > ### 3.1. Getting a Youtube Data API key
 
-  ### 3.2. Providinng the API key to your application
+> ### 3.2. Providinng the API key to your application
 
-  #### 3.2.1 input this application in the.env file
+>>  #### 3.2.1 input this application in the.env file
     REACT_APP_API_KEY = = 'AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-  ### 3.3. Installing dependencies
+> ### 3.3. Installing dependencies
   To install the dependencies run
 
   npm install
   With yarn
 
   yarn install
-  ### 3.4 Running the application
+>  ### 3.4 Running the application
 
 ## 4 Features
 This application includes the major features of Youtube such as
