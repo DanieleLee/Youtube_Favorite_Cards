@@ -19,10 +19,8 @@
     REACT_APP_API_KEY = = 'AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 > ### 3.3. Installing dependencies
   To install the dependencies run
-
   npm install
   With yarn
-
   yarn install
 >  ### 3.4 Running the application
 
