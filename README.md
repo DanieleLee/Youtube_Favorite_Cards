@@ -35,12 +35,12 @@ searching for videos
 watching videos
 displaying comments and video details
 
-⚙ 7 Used technologies
-React / create-react-app
-React Hooks
-Redux
-Redux-saga
-Redux-reselect
-PostCSS
-Firebase
+⚙ 7 Used technologies <br/>
+React / create-react-app <br/>
+React Hooks <br/>
+Redux <br/>
+Redux-saga <br/>
+Redux-reselect <br/>
+PostCSS <br/>
+Firebase <br/>
 
