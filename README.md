@@ -16,7 +16,8 @@
 > ### 3.2. Providinng the API key to your application
 
 >>  #### 3.2.1 input this application in the.env file
-    REACT_APP_API_KEY = = 'AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+    REACT_APP_API_KEY = = 'AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';<br />
+    REACT_APP_YOUTUBE_API_KEY = '  '
 > ### 3.3. Installing dependencies
   To install the dependencies run
   npm install
